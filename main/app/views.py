@@ -15,11 +15,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import time
 
-client = MongoClient("mongodb://localhost:27017", server_api=ServerApi('1'))
+client = MongoClient("mongodb+srv://abiraj:since13062003@cluster0.cmhton0.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 
 db_user = client.django.user
-stu_data = client.django.students_data
-students_data = client.classroom.students
+students_data = client.django.students
+# stu_data = client.django.students_data
 
 @login_required(login_url='signin')
 def data_feed(request):
